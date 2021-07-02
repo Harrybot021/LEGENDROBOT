@@ -74,24 +74,24 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-Hello My name is [LEGEND](https://telegra.ph/file/22d0976cc9c7627d48319.jpg)
+Hello My name is [HARRY](https://telegra.ph/file/a2d5b3cfe6a355459cb3e.jpg)
 I'm here to help you manage your groups! Hit` *📚Commands* `button below to find out more about how to use me to my full potential.Add Me in Ur Group With full Rights. ITS HELP U TO MANAGE UR BOT.
 """
 
 buttons = [
     [
         InlineKeyboardButton(
-            text="➕️ ADD LEGEND TO YOUR GROUP ➕️", url="t.me/LEGEND_Mr_Bot?startgroup=true"),
+            text="➕️ ADD HARRY TO YOUR GROUP ➕️", url="t.me/HARRY_Mr_Bot?startgroup=true"),
     ],
     [
-        InlineKeyboardButton(text="ℹ️ ABOUT", callback_data="LEGEND_"),
+        InlineKeyboardButton(text="ℹ️ ABOUT", callback_data="HARRY_"),
         InlineKeyboardButton(text="📚 COMMANDS", callback_data="help_back"),
     ],
     [
         InlineKeyboardButton(
             text="💾 SOURCE", callback_data="source_"),
         InlineKeyboardButton(
-            text="OWNER", url="https://t.me/Legend_Mr_Hacker"
+            text="OWNER", url="https://t.me/@Dev_Harry"
         ),
     ],
 ]
@@ -114,7 +114,7 @@ CHAT_SETTINGS = {}
 USER_SETTINGS = {}
 
 for module_name in ALL_MODULES:
-    imported_module = importlib.import_module("Legend_Mr_Bot.modules." + module_name)
+    imported_module = importlib.import_module("Harry_Mr_bot.modules." + module_name)
     if not hasattr(imported_module, "__mod_name__"):
         imported_module.__mod_name__ = imported_module.__name__
 
@@ -344,9 +344,9 @@ def help_button(update, context):
 @run_async
 def LEGEND_about_callback(update: Update, context: CallbackContext):
     query = update.callback_query
-    if query.data == "LEGEND_":
+    if query.data == "HARRY_":
         query.message.edit_text(
-            text=""" ℹ️ I'm *LEGEND*, a powerful group management bot built to help you manage your group easily.
+            text=""" ℹ️ I'm *HARRY*, a powerful group management bot built to help you manage your group easily.
                  ❍ I can restrict users.
                  ❍ I can greet users with customizable welcome messages and even set a group's rules.
                  ❍ I have an advanced anti-flood system.
@@ -354,8 +354,8 @@ def LEGEND_about_callback(update: Update, context: CallbackContext):
                  ❍ I have a note keeping system, blacklists, and even predetermined replies on certain keywords.
                  ❍ I check for admins' permissions before executing any command and more stuffs
                  \n_LEGEND's licensed under the GNU General Public License v3.0_
-                 Here is the [💾Repository](https://github.com/LEGEND-OS/LEGENDROBOT).
-                 If you have any question about LEGEND, let us know at @Legend_Mr_Bot.""",
+                 Here is the [💾Repository](https://github.com/Harrybot021/LEGENDROBOT).
+                 If you have any question about HARRY, let us know at @Harry_Mr_bot.""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -366,7 +366,7 @@ def LEGEND_about_callback(update: Update, context: CallbackContext):
                 ]
             ),
         )
-    elif query.data == "LEGEND_back":
+    elif query.data == "HARRY_back":
         query.message.edit_text(
                 PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(buttons),
@@ -381,8 +381,8 @@ def Source_about_callback(update: Update, context: CallbackContext):
     query = update.callback_query
     if query.data == "source_":
         query.message.edit_text(
-            text=""" Hi..🤗 I'm *LEGEND*
-                 \nHere is the [Source Code](https://github.com/LEGEND-OS/LEGENDROBOT) .""",
+            text=""" Hi..🤗 I'm *HARRY*
+                 \nHere is the [Source Code](https://github.com/Harrybot021/LEGENDROBOT) .""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=False,
             reply_markup=InlineKeyboardMarkup(
